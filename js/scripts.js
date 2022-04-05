@@ -1,6 +1,6 @@
 //Adding new item
 function newItem() {
-    let li = '<li></li>';
+    let li = $('<li></li>');
     let inputValue = $('#input').val();
     let text = li.append(document.createTextNode(inputValue));
     
