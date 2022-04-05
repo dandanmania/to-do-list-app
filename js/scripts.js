@@ -5,7 +5,7 @@ function newItem() {
     let text = li.append(document.createTextNode(inputValue));
     
     if (inputValue === '') {
-        alert("You must write something!");
+        alert('You must write something!');
     } else {
         let list = $('#list');
         list.append(li);
@@ -17,17 +17,18 @@ function newItem() {
     }
     li.on('dblclick', crossOut);
     
-    
     // Delete button
     let crossOutButton = $('<crossOutButton></crossOutButton>');
     crossOutButton.append(document.createTextNode('X'));
     li.append(crossOutButton);
-    
+
     // Add delete class from css
     function deleteListItem() {
         li.addClass('delete');
     }
-    
+
+    crossOutButton.on('click', deleteListItem);
+
     //Reorder items
     $('#list').sortable();
 };
